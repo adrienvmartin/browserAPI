@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Exercise 12</title>
+    <script>
+        let userInput = window.prompt(`Enter the number of seconds for a timer`);
+        let realTime = userInput * 1000;
+        console.log(`There are ${userInput} seconds left`);
+        function counter() {
+            if (userInput > 0) {
+            userInput -= 1;
+            console.log(`There are ${userInput} seconds left`);
+            }
+        }
+        setInterval(counter, 1000);
+    </script>
+</head>
+
+<body>
+    <h1>Exercise 12</h1>
+</body>
