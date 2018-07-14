@@ -3,11 +3,23 @@
 <head>
     <title>Exercise 7</title>
     <script>
-        window.alert("This program adds all the numbers you input");
-        let numOne = window.prompt("Input a number");
-        let numTwo = window.prompt("Input another number");
-        let result = numOne + numTwo;
-        window.alert(`The result is ${result}`);
+        function numberPrompt() {
+            let result = null;
+            window.alert(`This program adds all the numbers you want.`);
+            result += Number(window.prompt(`Please enter a number`));
+
+            function askPrompt() {
+                return window.confirm(`The result so far is ${result}. Would you like to add another number?`);
+            }
+
+            for (i = 0; askPrompt() === true; i++) {
+                result += Number(window.prompt(`Please add a number:`));
+            }
+
+        }
+
+        numberPrompt();
+
     </script>
 </head>
 
