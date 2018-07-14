@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+    <title>Exercise 13</title>
+    <script>
+        let timer = window.prompt(`Please enter the number of seconds you wish to stay on this site`) * 1000;
+        console.log(timer);
+        function expiredMessage() {
+            window.alert(`Your session has expired`);
+        }
+        setTimeout(expiredMessage, timer);
+    </script>
+</head>
+
+<body>
+    <h1>Exercise 13</h1>
+</body>
