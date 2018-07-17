@@ -40,16 +40,13 @@
     <script>
             
         window.onload = function () {
-            const linkColor = document.querySelector('a');
-            let userColor = window.prompt("Please choose & input one of the following colors: green, blue or red");
-            if (userColor == "green" || userColor == "blue" || userColor == "red") {
-                linkColor.classList.add(`${userColor}`);
-            }
-            else {
-                window.alert("You didn't select a color!");
-                window.onload();
+            const link = document.querySelector('a');
+            let colors = document.querySelector("select");
+            function buttonSelector() {
+                link.classList.add(colors.value);
             }
         }
+
 
     </script>
 </head>
@@ -60,6 +57,12 @@
     <a href="#" class="menu">Link 3</a>
     <a href="#" class="menu">Link 4</a>
     <a href="#" class="menu">Link 5</a>
+<br>
+<select name="colors" id="selectcolors">
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <input type="submit" name="submit_color" onclick="buttonSelector()">
 
 </body>
 
