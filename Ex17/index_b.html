@@ -37,28 +37,25 @@
             color: red;
         }
     </style>
-    <script>
-            
-        window.onload = function () {
-            const link = document.querySelector('a');
-            let colors = document.querySelector("select");
-            function buttonSelector() {
-                link.classList.add(colors.value);
-            }
-        }
 
-
-    </script>
 </head>
 
 <body>
+    <script>
+        function buttonSelector() {
+            let link = document.querySelector('a');
+            let colors = document.querySelector('select');
+            link.classList.remove("red", "green", "blue");
+            link.classList.add(colors.value);
+        }
+    </script>
     <a href="#" class="menu">Link 1</a>
     <a href="#" class="menu">Link 2</a>
     <a href="#" class="menu">Link 3</a>
     <a href="#" class="menu">Link 4</a>
     <a href="#" class="menu">Link 5</a>
-<br>
-<select name="colors" id="selectcolors">
+    <br>
+    <select name="colors" id="selectcolors">
         <option value="red">Red</option>
         <option value="green">Green</option>
         <option value="blue">Blue</option>
