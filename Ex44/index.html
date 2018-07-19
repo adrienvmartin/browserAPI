@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form Properties</title>
+    <script>
+        window.onload = function () {
+            let userForm = document.querySelector('form');
+
+            let submitButton = document.querySelector('button');
+
+            function formSubmission() {
+                event.preventDefault();
+                let username = userForm.elements[0].value;
+                let password = userForm.elements[1].value;
+                console.log(username);
+                console.log(password);
+
+            }
+
+            submitButton.addEventListener('click', formSubmission);
+
+        }
+    </script>
+</head>
+
+<body>
+    <form action="save_user.html" method="post" enctype="application/x-www-form-urlencoded" name="login">
+        <input type="text" id="username" name="username" />
+        <input type="password" id="pass" name="pass" />
+        <button>Show Username and Password</button>
+    </form>
+    <div></div>
+</body>
+
+</html>
