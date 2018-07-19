@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Events</title>
+    <script>
+        window.onload = function () {
+            let buttonOne = document.querySelector("#firstButton");
+            let buttonTwo = document.querySelector("#secondButton");
+
+            function greeting() {
+                window.alert("You've clicked an event listener button!");
+            }
+
+
+            function remove() {
+                window.alert("You've removed the event listener from the first button!");
+                buttonOne.removeEventListener('click', greeting);
+            }
+
+
+            buttonOne.addEventListener('click', greeting);
+
+            buttonTwo.addEventListener('click', remove);
+        }
+    </script>
+</head>
+
+<body>
+    <button id="firstButton">Click Me!!</button>
+    <button id="secondButton">Remove event listener</button>
+    <a href="https://google.com">Link with JavaScript handler</a>
+</body>
+
+</html>
