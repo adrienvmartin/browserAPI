@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>It's all JavaScript Baby!!</title>
+    <script>
+    window.onload = function() {
+        let body = document.querySelector('body');
+        let nameArray = ["John", "Bobby", "Jane", "Sarah", "Darth Vader", "Yoda", "Spock", "Homer Simpson", "Wonder Woman", "Some Guy"];
+        let list = document.createElement('ul');
+        for (i=0; i < 10; i++) {
+            let listItem = document.createElement('li');
+            let listItem = nameArray[i];
+            list.appendChild(listItem);
+        }
+
+        document.body.appendChild(list);
+    }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
