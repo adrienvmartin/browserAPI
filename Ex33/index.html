@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Events</title>
+    <script>
+        window.onload = function () {
+            let buttonOne = document.querySelector("#firstButton");
+            let buttonTwo = document.querySelector("#secondButton");
+
+            buttonOne.addEventListener('click', function () {
+                window.alert("You've clicked an event listener button!");
+            })
+
+
+            function blueBG() {
+                if (this.style.fontWeight == "bold") {
+                    this.style.fontWeight = "normal";
+                }
+                else {
+                    this.style.fontWeight = "bold";
+                }
+            }
+
+            function greenBG() {
+                if (this.style.backgroundColor == "green") {
+                    this.style.backgroundColor = "blue";
+                }
+                else {
+                    this.style.backgroundColor = "green";
+                }
+
+            }
+
+            buttonTwo.addEventListener('click', blueBG);
+            buttonTwo.addEventListener('dblclick', greenBG);
+        }
+    </script>
+</head>
+
+<body>
+    <button id="firstButton">Click Me!!</button>
+    <button id="secondButton">Remove event listener</button>
+    <a href="https://google.com">Link with JavaScript handler</a>
+</body>
+
+</html>
