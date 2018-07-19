@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Products</title>
+</head>
+<script>
+    window.onload = function () {
+        let list = document.querySelector('ul');
+        let itemOne = list.children.item(0);
+        let itemTwo = list.children.item(1);
+        let itemThree = list.children.item(2);
+        let itemFour = list.children.item(3);
+        let itemFive = list.children.item(4);
+        let itemSix = list.children.item(5);
+        let itemSeven = list.children.item(6);
+        list.removeChild(itemOne);
+        list.removeChild(itemTwo);
+        list.removeChild(itemThree);
+        list.removeChild(itemFour);
+        list.removeChild(itemFive);
+        list.removeChild(itemSix);
+        list.removeChild(itemSeven);
+    }
+</script>
+
+<body>
+    <ul>
+        <li>Bannana</li>
+        <li>Apple</li>
+        <li>Peach</li>
+        <li>Eggs</li>
+        <li>Tomatto</li>
+        <li>Lettuce</li>
+        <li>Milk</li>
+    </ul>
+</body>
+
+</html>
