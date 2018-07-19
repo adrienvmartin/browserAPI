@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Products</title>
+    <script>
+        window.onload = function () {
+            let list = document.querySelector('ul');
+            for (i=6; i >= 0; i--) {
+                list.removeChild(list.children.item(i));
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>Banana</li>
+        <li>Apple</li>
+        <li>Peach</li>
+        <li>Eggs</li>
+        <li>Tomato</li>
+        <li>Lettuce</li>
+        <li>Milk</li>
+    </ul>
+</body>
+
+</html>
