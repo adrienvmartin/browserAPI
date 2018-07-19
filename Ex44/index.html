@@ -14,9 +14,7 @@
                 event.preventDefault();
                 let username = userForm.elements[0].value;
                 let password = userForm.elements[1].value;
-                console.log(username);
-                console.log(password);
-
+                window.alert(`Your username is: ${username} \n Your password is: ${password}`);
             }
 
             submitButton.addEventListener('click', formSubmission);
