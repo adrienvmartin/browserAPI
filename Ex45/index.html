@@ -11,7 +11,11 @@
             event.preventDefault();
                 let username = form.elements[0].value;
                 let password = form.elements[1].value;
+                let div = document.querySelector('div');
+                let paragraph = document.createElement('p');
                 window.alert(`Your username is: ${username} \n Your password is: ${password}`);
+                paragraph.appendChild(`Username: ${username} \n Password: ${password}`);
+                div.appendChild(paragraph);
           }
       }
   </script>
