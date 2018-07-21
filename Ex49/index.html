@@ -7,17 +7,25 @@
   <script>
     window.onload = function () {
       const form = document.querySelector('form');
-      const username = form.elements[0];
-      const password = form.elements[1];
+      let username = form.elements[0];
+      let password = form.elements[1];
 
       form.onsubmit = function () {
-        event.preventDefault();
-        if (username.value.length === 0 || username.password.length === 0) {
-          window.alert("Username or password field is empty!");
-          return false;
+
+        if (username.value.length === 0) {
+          window.alert("Username field is empty!");
+          event.preventDefault();
         }
- 
-        return true;
+
+        if (password.value.length === 0) {
+          window.alert("Password field is empty!");
+          event.preventDefault();
+        }
+
+        else {
+          return true;
+        }
+
       }
 
     }
