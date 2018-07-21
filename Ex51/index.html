@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+    <script>
+        window.onload = function () {
+
+            const response = `{
+                "title": "A New Hope",
+                "episode_id": 4,
+                "species": [
+                    "https://swapi.co/api/species/5/",
+                    "https://swapi.co/api/species/3/",
+                    "https://swapi.co/api/species/2/",
+                    "https://swapi.co/api/species/1/",
+                    "https://swapi.co/api/species/4/"
+                ]
+            }`
+
+            let movie = JSON.parse(response);
+            let jsonresponse = document.getElementById('jsonresponse');
+
+            let header = document.createElement('h1');
+            header.textContent = `${movie.title}`;
+            jsonresponse.appendChild(header);
+
+            let subHeader = document.createElement('p');
+            subHeader.textContent = `Episode ID: ${movie.episode_id}`;
+            jsonresponse.appendChild(subHeader);
+
+            movie.species.forEach((episode,index) => {
+                let episodeLink = document.createElement("a");
+                episodeLink.href = episode;
+                episodeLink.textContent = "Link: " + (index+1) + "\n";
+                jsonresponse.appendChild(episodeLink);
+            });
+
+
+/*          Alt version:
+            for (i=0; i < movie.species.length; i++) {
+                let link = document.createElement('a');
+                link.textContent = `Link ${[i]} \n`;
+                link.setAttribute('href', `${movie.species[i]}`);
+                jsonresponse.appendChild(link);            } */
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="jsonresponse"></div>
+</body>
+
+</html>
