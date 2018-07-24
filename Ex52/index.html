@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<head>
+    <title>API exercise 52</title>
+    <script>
+        window.onload = function () {
+            const apiURL = "https://swapi.co/api/films/";
+            fetch(apiURL)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    let div = document.querySelector('div');
+
+                    for (i = 0; i < data.results.length; i++) {
+                        let movieList = document.createElement('ul');
+                        let titleItem = document.createElement('li');
+                        let episodeItem = document.createElement('li');
+                        let releaseItem = document.createElement('li');
+                        div.appendChild(movieList);
+
+                        titleItem.textContent = (`Title: ${data.results[i].title}`);
+                        episodeItem.textContent = (`Episode: ${data.results[i].episode_id}`);
+                        releaseItem.textContent = (`Release date: ${data.results[i].release_date}`);
+
+                        movieList.appendChild(titleItem);
+                        movieList.appendChild(episodeItem);
+                        movieList.appendChild(releaseItem);
+
+                    }
+
+                });
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Exercise 52</h1>
+    <br>
+    <p></p>
+    <div></div>
+
+</body>
