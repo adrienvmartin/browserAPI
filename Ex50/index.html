@@ -9,23 +9,46 @@
       const form = document.querySelector('form');
       let username = form.elements[0];
       let password = form.elements[1];
+      let email = form.elements[2];
 
-      form.onsubmit = function () {
+      const validateUser = function (username) {
+        const regex = /^[a-z0-9]+$/i;
+        return regex.test(username);
+      }
 
-        if (username.value.length === 0) {
-          window.alert("Username field is empty!");
+      const validatePass = function (password) {
+        const regex = /^[a-z0-9]+$/i;
+        return regex.test(password);
+      }
+
+      const validateEmail = function (email) {
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        return regex.test(email);
+      }
+
+      form.onsubmit = function (event) {
+
+        if (username.value.length === 0 || password.value.length === 0 || email.value.length === 0) {
+          form.classList.add('error');
+          window.alert("You left a form blank!");
           event.preventDefault();
         }
 
-        if (password.value.length === 0) {
-          window.alert("Password field is empty!");
+        else if (!validateUser(username.value) || !validatePass(password.value)) {
+          form.classList.add('error');
+          window.alert("Username and password must contain ONLY alphanumeric characters and numbers!");
+          event.preventDefault();
+        }
+
+        else if (!valideEmail(username.email)) {
+          form.classList.add('error');
+          window.alert("Invalid email!");
           event.preventDefault();
         }
 
         else {
           return true;
         }
-
       }
 
     }
@@ -44,9 +67,8 @@
   <form action="save_user.html" method="post" enctype="application/x-www-form-urlencoded" name="login">
     <input type="text" id="username" name="username" />
     <input type="password" id="pass" name="pass" />
-    <input type="text" id="email" name="email" >
     <input type="submit" name="submit" value="Send" />
-
+    <input type="text" id="email" name="email">
   </form>
   <div id="errors"></div>
 </body>
