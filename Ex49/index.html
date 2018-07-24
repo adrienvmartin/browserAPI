@@ -9,23 +9,19 @@
       const form = document.querySelector('form');
       let username = form.elements[0];
       let password = form.elements[1];
-      const button = document.querySelector('button');
 
       form.onsubmit = function (event) {
-        event.preventDefault();
 
         if (username.value.length === 0 || password.value.length === 0) {
           form.classList.add('error');
-          return false;
+          window.alert("You left a form blank!");
+          event.preventDefault();
         }
 
         else {
-          form.onsubmit() = true;
+          return true;
         }
       }
-      
-      button.addEventListener('click', form.onsubmit());
-
 
     }
   </script>
